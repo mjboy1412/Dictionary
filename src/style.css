@@ -36,13 +36,20 @@ button{
     max-width:800px;
     margin:10px auto 0 auto;
     padding:1rem 0.5rem;
-    background-color:var(--Light-Grayish-Blue-Hover);
     border-radius:0.5rem 0.5rem 0 0;
+}
+
+.header.light{
+    background-color:var(--Light-Grayish-Blue-Hover);
+}
+
+.header.dark{
+    background-color:var(--Very-Dark-Desaturated-Blue);
 }
 
 .header h1{
     font-size:1.6rem;
-    color:var(--Very-Dark-Blue);
+    font-weight:600;
 }
 
 .header div>img{
@@ -52,5 +59,20 @@ button{
 
 body{
     overflow-x:hidden;
+}
+
+#body{
+    min-width:100vw;
+    min-height:100vh;
+    position:absolute;
+}
+
+#body.light{
     background-color:var(--Light-Grayish-Blue);
+    color:var(--Very-Dark-Blue);
+}
+
+#body.dark{
+    background-color:var(--Very-Dark-Blue);
+    color:#FFF;
 }

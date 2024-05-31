@@ -14,7 +14,9 @@ function App() {
 
   return (
     <>
+    <div id='body' className={theme}>
       <Header theme={theme} changeTheme={changeTheme} />
+    </div>
     </>
   )
 }
