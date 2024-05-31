@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import './style.css';
+import Main from './components/Main';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <>
     <div id='body' className={theme}>
       <Header theme={theme} changeTheme={changeTheme} />
+      <Main theme={theme} />
     </div>
     </>
   )
