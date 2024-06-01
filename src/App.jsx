@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import './style.css';
-import Main from './components/Main';
+import MainSection from './components/MainSection';
 
 function App() {
 
     // Theme state.
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
 
     // This function toggle the theme state between light and dark.
     const changeTheme = () => {
@@ -17,7 +17,7 @@ function App() {
     <>
     <div id='body' className={theme}>
       <Header theme={theme} changeTheme={changeTheme} />
-      <Main theme={theme} />
+      <MainSection theme={theme} />
     </div>
     </>
   )
