@@ -44,13 +44,13 @@ export default function WordResult({theme, word, phonetics, meanings}) {
                                                 <div key={index}>
                                                     <p className={`definition ${theme}`}>{definition["definition"]}</p>
                                                     {
-                                                        definition["synonyms"].length > 0 && (<p className='synonym'><span>Synonyms: </span>{definition["synonyms"].join(',')}</p>)
+                                                        definition["synonyms"].length > 0 && (<p className='synonym'><span>&nbsp;&mdash; Synonyms: </span>{definition["synonyms"].join(',')}</p>)
                                                     }
                                                     {
-                                                        definition["antonyms"].length > 0 && (<p className='antonym'><span>Antonyms: </span>{definition["antonyms"].join(',')}</p>)
+                                                        definition["antonyms"].length > 0 && (<p className='antonym'><span>&nbsp;&mdash; Antonyms: </span>{definition["antonyms"].join(',')}</p>)
                                                     }
                                                     {
-                                                        definition["example"] && (<p className='example'><span>Example: </span>{definition["example"]}</p>)
+                                                        definition["example"] && (<p className='example'><span>&nbsp;&mdash; Example: </span>{definition["example"]}</p>)
                                                     }
 
                                                 </div>

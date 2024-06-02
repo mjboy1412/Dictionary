@@ -1,5 +1,5 @@
 
-export default function WelcomeScreen({theme}) {
+export default function WelcomeScreen({theme, setSearchWord}) {
 
     // Array of objects for initial word cards.
     const wordCards = [
@@ -29,7 +29,7 @@ export default function WelcomeScreen({theme}) {
                     <div className={`wordCard ${theme}`} key={index}>
                         <p className='title'>{card["title"]}</p>
                         <p className='welcomeWordDefinition'>{card["definition"]}</p>
-                        <button type='button' className='knowMoreBtn'>Know More</button>
+                        <button type='button' className='knowMoreBtn' onClick={() => {setSearchWord(card["title"])}}>Know More</button>
                     </div>
                 ))
             }
