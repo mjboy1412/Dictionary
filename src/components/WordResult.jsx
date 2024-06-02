@@ -34,10 +34,11 @@ export default function WordResult({theme, word, phonetics, meanings}) {
                 <div className='meaningContainer'>
                     {
                         meanings.map((meaning, index) => {
+                            console.log(meaning)
 
                             return (
                                 <div className='meaning' key={index}>
-                                    <p className='partOfSpeech'>{meaning["partOfSpeech"]}</p>
+                                    <p className='partOfSpeechTitle'>{meaning["partOfSpeech"]}</p>
                                     {
                                         meaning["definitions"].map((definition, index) => {
                                             return (
@@ -56,6 +57,12 @@ export default function WordResult({theme, word, phonetics, meanings}) {
                                                 </div>
                                             )
                                         })
+                                    }
+                                    {
+                                        meaning["synonyms"].length > 0 && (<p className='synonym last'><span>Synonyms: </span>{meaning["synonyms"].join(', ')}</p>)
+                                    }
+                                    {
+                                        meaning["antonyms"].length > 0 && (<p className='antonym last'><span>Antonyms: </span>{meaning["antonyms"].join(', ')}</p>)
                                     }
                                 </div>
                             )
