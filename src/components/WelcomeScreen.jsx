@@ -1,5 +1,5 @@
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({theme}) {
 
     // Array of objects for initial word cards.
     const wordCards = [
@@ -26,10 +26,10 @@ export default function WelcomeScreen() {
         <div className='welcome'>
             {
                 wordCards.map((card, index) => (
-                    <div className='wordCard' key={index}>
+                    <div className={`wordCard ${theme}`} key={index}>
                         <p className='title'>{card["title"]}</p>
                         <p className='welcomeWordDefinition'>{card["definition"]}</p>
-                        <button type='button' className='knowMore'>Know More</button>
+                        <button type='button' className='knowMoreBtn'>Know More</button>
                     </div>
                 ))
             }

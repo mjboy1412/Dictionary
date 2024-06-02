@@ -184,3 +184,44 @@ body{
 .synonym.last,.antonym.last{
     margin:1.5rem 0;
 }
+
+.wordCard{
+    width:90%;
+    margin:1.5rem auto;
+    padding:1rem;
+    border-radius:0.7rem;
+}
+
+.wordCard.dark{
+    background-color:var(--Very-Dark-Blue);
+}
+
+.wordCard.light{
+    background-color:var(--Light-Grayish-Blue);
+}
+
+.wordCard .title{
+    font-size:1.3rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wordCard .welcomeWordDefinition{
+    margin:10px;
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing:0.8px;
+}
+
+.wordCard .knowMoreBtn{
+    display:block;
+    background-color:#000;
+    color:#FFF;
+    padding:0.5rem;
+    margin-left:auto;
+    border-radius:0.3rem;
+    font-size:1rem;
+    transition:all 0.2s ease-in-out;
+}
+
+.wordCard .knowMoreBtn:hover{
+    transform:translateX(3px);
+}
