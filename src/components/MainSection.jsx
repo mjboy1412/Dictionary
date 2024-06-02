@@ -5,6 +5,9 @@ import WelcomeScreen from "./WelcomeScreen";
 
 export default function MainSection({ theme }) {
 
+    // State for word to fetch api data for the word user searched for.
+    const [word, setSearchWord] = useState(null);
+
     // State for the word  searched by user.
     const [wordData, setWordData] = useState(null);
 
@@ -49,7 +52,7 @@ export default function MainSection({ theme }) {
 
     return (
         <main className={`main ${theme}`}>
-            <Input theme={theme} setWordData={setWordData} setOutputSection={setOutputSection} />
+            <Input theme={theme} word={word} setSearchWord={setSearchWord} setWordData={setWordData} setOutputSection={setOutputSection} />
             {outputSection}
         </main>
     );
