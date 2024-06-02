@@ -31,7 +31,7 @@ button{
 }
 
 .header,.main{
-    width:100vw;
+    width:95vw;
     max-width:800px;
     margin:10px auto 0 auto;
     padding:1rem 0.5rem;
@@ -39,6 +39,7 @@ button{
 
 .header{
     justify-content:space-between;
+    flex-wrap:wrap;
     border-radius:0.5rem 0.5rem 0 0;
 }
 
@@ -60,6 +61,7 @@ input{
     padding:0.8rem;
     border-radius:0.3rem 0 0 0.3rem;
     background-color:transparent;
+    max-width:60vw;
 }
 
 .searchWordBtn{
@@ -104,6 +106,7 @@ body{
     min-width:100vw;
     min-height:100vh;
     position:absolute;
+    flex-direction:column;
 }
 
 #body.light{
@@ -309,4 +312,14 @@ body{
         border-right-color:#FFF;}
     100%{border-right-color:var(--Very-Dark-Gray);
         border-top-color:#FFF;}
+}
+
+@media only screen and (max-width:400px){
+    .main{
+        padding:1rem 0;
+    }
+
+    .result{
+        padding:1rem 0.4rem;
+    }
 }

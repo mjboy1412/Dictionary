@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import searchDark from '../images/search-dark.svg';
 import searchLight from '../images/search-light.svg';
 

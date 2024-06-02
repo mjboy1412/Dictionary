@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-    <div id='body' className={theme}>
+    <div id='body' className={`${theme} flex`}>
       <Header theme={theme} changeTheme={changeTheme} />
       <MainSection theme={theme} />
     </div>
