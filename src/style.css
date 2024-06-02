@@ -44,6 +44,7 @@ button{
 
 .main{
     border-radius:0 0 0.5rem 0.5rem;
+    margin-bottom:1rem;
 }
 
 label{
@@ -113,4 +114,73 @@ body{
 #body.dark{
     background-color:var(--Very-Dark-Blue);
     color:#FFF;
+}
+
+.result{
+    margin:20px auto 0 auto;
+    padding:1rem;
+}
+
+.word{
+    font-size:1.8rem;
+}
+
+.wordDetails{
+    padding-left:10px;
+}
+
+.phonetics{
+    margin:0.8rem 0;
+    justify-content:flex-start;
+    gap:2.5rem;
+    opacity:0.8;
+    font-size:13px;
+    flex-wrap:wrap;
+}
+
+.phonetic{
+    gap:0.6rem;
+}
+
+.partOfSpeechTitle{
+    font-size:1.5rem;
+    font-weight:500;
+    margin-top:1.3rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.definition{
+    margin:20px 5px 10px 5px;
+    font-size:16px;
+}
+
+.definition::before{
+    display:inline-block;
+    content:' ';
+    height:5px;
+    width:5px;
+    border-radius:100px;
+    margin:3px 5px;
+    background-color:#FFF;
+}
+
+.definition.light::before{
+    background-color:var(--Very-Dark-Blue);
+}
+
+.definition.dark::before{
+    background-color:#FFF;
+}
+
+.synonym,.antonym,.example{
+    margin:5px 15px;
+}
+
+.synonym span,.antonym span,.example span{
+    font-size:1.1rem;
+    letter-spacing:0.5px;
+}
+
+.synonym.last,.antonym.last{
+    margin:1.5rem 0;
 }

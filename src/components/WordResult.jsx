@@ -43,7 +43,7 @@ export default function WordResult({theme, word, phonetics, meanings}) {
                                         meaning["definitions"].map((definition, index) => {
                                             return (
                                                 <div key={index}>
-                                                    <p className='definition'>{definition["definition"]}</p>
+                                                    <p className={`definition ${theme}`}>{definition["definition"]}</p>
                                                     {
                                                         definition["synonyms"].length > 0 && (<p className='synonym'><span>Synonyms: </span>{definition["synonyms"].join(',')}</p>)
                                                     }
