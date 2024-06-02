@@ -34,7 +34,6 @@ export default function WordResult({theme, word, phonetics, meanings}) {
                 <div className='meaningContainer'>
                     {
                         meanings.map((meaning, index) => {
-                            console.log(meaning)
 
                             return (
                                 <div className='meaning' key={index}>

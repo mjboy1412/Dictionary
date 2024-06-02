@@ -2,17 +2,27 @@ import { useEffect, useRef, useState } from 'react';
 import searchDark from '../images/search-dark.svg';
 import searchLight from '../images/search-light.svg';
 
-export default function Input({theme, setWordData}) {
+export default function Input({theme, setWordData, setOutputSection}) {
 
     // Set search icon image according to theme.
     const searchIcon = theme === 'light' ? searchDark : searchLight;
+
+    const loader = (
+        <div className='loaderContainer flex'>
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+        </div>
+    );
 
     // State for word to fetch api data for the word user searched for.
     const [word, setSearchWord] = useState(null);
 
     // This useEffect will create a side effect when the word state is changed, means when user search for a word.
     useEffect(() => {
+
         if (word) {
+            setOutputSection(loader)
             const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
             fetch(url)

@@ -225,3 +225,52 @@ body{
 .wordCard .knowMoreBtn:hover{
     transform:translateX(3px);
 }
+
+.loaderContainer{
+    gap:0px;
+    margin:2rem;
+}
+
+.circle{
+    width:10px;
+    height:10px;
+    margin:5px;
+    border-radius:50%;
+    background:#000;
+    animation:circle 1s infinite;
+}
+
+.main.dark .circle{
+    background:#FFF;
+}
+
+.circle:nth-child(2){
+    animation-delay:0.2s;
+}
+
+.circle:nth-child(3){
+    animation-delay:0.4s;
+}
+
+@keyframes circle{
+    0%{transform:scale(1); opacity:1;}
+    50%{transform:scale(0); opacity:0;}
+    100%{transform:scale(1); opacity:1;}
+}
+
+@keyframes loading{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
+
+@keyframes changeBorderColor{
+    0%{border-top-color:#FFF;}
+    25%{border-top-color:var(--Very-Dark-Gray);
+        border-left-color:#FFF;}
+    50%{border-left-color:var(--Very-Dark-Gray);
+        border-bottom-color:#FFF;}
+    75%{border-bottom-color:var(--Very-Dark-Gray);
+        border-right-color:#FFF;}
+    100%{border-right-color:var(--Very-Dark-Gray);
+        border-top-color:#FFF;}
+}
