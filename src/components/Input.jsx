@@ -28,7 +28,15 @@ export default function Input({theme, setWordData, setOutputSection}) {
             fetch(url)
             .then(response => response.json())
             .then(data => setWordData(data))
-            .catch(err => console.log('error:', err));
+            .catch(err => {
+                console.log('Error:', err);
+                const fetchError = (
+                    <div>
+                        <p className='fetchError'>Something went wrong, try again... 😬</p>
+                    </div>
+                );
+                setOutputSection(fetchError);
+            });
         }
     }, [word]);
 

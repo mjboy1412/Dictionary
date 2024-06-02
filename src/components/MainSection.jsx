@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Input from "./Input";
+import WordResult from "./WordResult";
 import WelcomeScreen from "./WelcomeScreen";
 
 export default function MainSection({ theme }) {
@@ -19,9 +20,23 @@ export default function MainSection({ theme }) {
     const handleData = (data) => {
         // If the word not found, then show error message for the word not found, else display output.
         if (data.title) {
-            console.log("Not found")
+
+            const errorWordNotFound = (
+                <div className='error'>
+                    <p className='errorTitle'>{wordData["title"]}</p>
+                    <p className='errorDescription'>{wordData["message"]}</p>
+                    <p className='errorResolution'>{wordData["resolution"]}</p>
+                </div>
+            );
+
+            setOutputSection(errorWordNotFound);
         } else {
-            console.log("Your word:", data[0].word);
+
+            const word = data[0]['word'];
+            const phonetics = data[0]['phonetics'];
+            const meanings = data[0]['meanings'];
+
+            setOutputSection(<WordResult theme={theme} word={word} phonetics={phonetics} meanings={meanings} />);
         }
     };
 
@@ -39,3 +54,5 @@ export default function MainSection({ theme }) {
         </main>
     );
 }
+
+// https://www.google.com/search?q=chat

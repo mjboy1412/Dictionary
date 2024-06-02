@@ -226,6 +226,27 @@ body{
     transform:translateX(3px);
 }
 
+.error{
+    margin-top:2rem;
+}
+
+.errorTitle{
+    font-size:1.3rem;
+    margin-bottom:1rem;
+    margin-left:10px;
+}
+
+.errorDescription,.errorResolution{
+    margin:5px;
+    margin-left:20px;
+}
+
+.fetchError{
+    margin:2rem;
+    text-align:center;
+    font-size:1.3rem;
+}
+
 .loaderContainer{
     gap:0px;
     margin:2rem;
