@@ -12,7 +12,7 @@ export default function MainSection({ theme }) {
     const [wordData, setWordData] = useState(null);
 
     // First screen when user visits the app.
-    const welcomeScreen = <WelcomeScreen theme={theme} setSearchWord={setSearchWord} />;
+    const welcomeScreen = <WelcomeScreen setSearchWord={setSearchWord} />;
     
     // The outputSection state will when user searches for any word.
     const [outputSection, setOutputSection] = useState(welcomeScreen);

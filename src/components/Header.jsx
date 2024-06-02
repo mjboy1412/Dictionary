@@ -12,7 +12,7 @@ export default function Header({theme, changeTheme}) {
             <h1>Dictionary</h1>
             <div className='flex'>
                 <button className='changeThemeBtn' onClick={() => changeTheme()}>
-                    <img src={themeBtnIcon} alt="Change theme" />
+                    <img src={themeBtnIcon} alt="Change theme" width={20} style={{transform: 'rotate(-15deg)'}} />
                 </button>
                 <img src={photo} alt="Author" height={40} />
             </div>

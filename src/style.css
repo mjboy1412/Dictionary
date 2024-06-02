@@ -192,11 +192,11 @@ body{
     border-radius:0.7rem;
 }
 
-.wordCard.dark{
+.main.dark .wordCard{
     background-color:var(--Very-Dark-Blue);
 }
 
-.wordCard.light{
+.main.light .wordCard{
     background-color:var(--Light-Grayish-Blue);
 }
 
