@@ -142,6 +142,20 @@ body{
     gap:0.6rem;
 }
 
+.voicePlayBtn{
+    background-size:cover;
+    height:20px;
+    width:20px;
+}
+
+.main.light .voicePlayBtn{
+    background:url('./images/volume-high-dark.svg') no-repeat;
+}
+
+.main.dark .voicePlayBtn{
+    background:url('./images/volume-high-light.svg') no-repeat;
+}
+
 .partOfSpeechTitle{
     font-size:1.5rem;
     font-weight:500;
@@ -164,11 +178,11 @@ body{
     background-color:#FFF;
 }
 
-.definition.light::before{
+.main.light .definition::before{
     background-color:var(--Very-Dark-Blue);
 }
 
-.definition.dark::before{
+.main.dark .definition::before{
     background-color:#FFF;
 }
 

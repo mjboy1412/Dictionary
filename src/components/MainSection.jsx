@@ -39,7 +39,7 @@ export default function MainSection({ theme }) {
             const phonetics = data[0]['phonetics'];
             const meanings = data[0]['meanings'];
 
-            setOutputSection(<WordResult theme={theme} word={word} phonetics={phonetics} meanings={meanings} />);
+            setOutputSection(<WordResult word={word} phonetics={phonetics} meanings={meanings} />);
         }
     };
 
