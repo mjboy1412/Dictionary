@@ -52,7 +52,7 @@ export default function Input({theme, word, setSearchWord, setWordData, setOutpu
     return (
         <div className='search'>
             <label htmlFor="searchWord" className={`flex ${theme}`}>
-                <input type="text" name="word" id="searchWord" placeholder="Search for a word..." ref={inputRef} />
+                <input type="text" name="word" id="searchWord" placeholder="Search for a word..." ref={inputRef} onKeyDown={(e) => {if (e.key === 'Enter') handleSearchBtnClick()}} />
                 <button className='searchWordBtn' onClick={handleSearchBtnClick}>
                     <img src={searchIcon} alt="Search" height={20} />
                 </button>

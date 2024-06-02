@@ -123,6 +123,7 @@ body{
 
 .word{
     font-size:1.8rem;
+    text-transform:capitalize;
 }
 
 .wordDetails{
