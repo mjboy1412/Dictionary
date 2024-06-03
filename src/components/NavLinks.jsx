@@ -5,18 +5,19 @@ import { WordDataContext } from "../contexts/WordDataContext"
 export default function NavLinks() {
 
     // Getting historyIcon and searchIcon from WordDataContext.
-    const { historyIcon, searchIcon } = useContext(WordDataContext);
+    const { homeIcon, searchIcon, historyIcon } = useContext(WordDataContext);
 
     return (
         <div className='optionBtnContainer flex'>
-            <li className='history'>
-                <NavLink to={'history'}
+
+            <li className='home'>
+                <NavLink to={'/'}
                     className={({ isActive }) => `
-                        navLink flex ${isActive ? 'active' : 'inactive'}
-                    `}
+                    navLink flex ${isActive ? 'active' : 'inactive'}
+                `}
                 >
-                    <img src={historyIcon} alt="history" height={15} />
-                    History
+                    <img src={homeIcon} alt="home" height={14} />
+                    Home
                 </NavLink>
             </li>
 
@@ -30,6 +31,18 @@ export default function NavLinks() {
                     Search
                 </NavLink>
             </li>
+
+            <li className='history'>
+                <NavLink to={'history'}
+                    className={({ isActive }) => `
+                        navLink flex ${isActive ? 'active' : 'inactive'}
+                    `}
+                >
+                    <img src={historyIcon} alt="history" height={15} />
+                    History
+                </NavLink>
+            </li>
+            
         </div>
     )
 }

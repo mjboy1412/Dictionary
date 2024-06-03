@@ -55,7 +55,7 @@ button{
     margin:1rem;
 }
 
-.history,.search{
+.home,.search,.history{
     list-style-type:none;
 }
 
@@ -73,6 +73,8 @@ button{
     border-bottom:3px solid transparent;
     opacity:0.7;
     padding:5px 2px;
+    position:relative;
+    padding-left:25px;
     transition:all 0.1s ease-in-out;
 }
 
@@ -86,8 +88,19 @@ button{
     opacity:0.5;
 }
 
+.navLink:active{
+    opacity:1;
+}
+
 .navLink img{
+    position:absolute;
+    left:0;
     margin-bottom:3px;
+    transition:all 0.2s ease-in-out;
+}
+
+.navLink.active img{
+    height:18px;
 }
 
 label{

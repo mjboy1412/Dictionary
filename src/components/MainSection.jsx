@@ -2,6 +2,8 @@ import searchDark from '../images/search-dark.svg';
 import searchLight from '../images/search-light.svg';
 import historyDark from '../images/clock-rotate-left-dark.svg';
 import historyLight from '../images/clock-rotate-left-light.svg';
+import houseDark from '../images/house-dark.svg';
+import houseLight from '../images/house-light.svg';
 import { useEffect, useState } from "react";
 import { WordDataContextProvider } from '../contexts/WordDataContext.jsx';
 import { Outlet } from 'react-router-dom';
@@ -10,9 +12,18 @@ import NavLinks from './NavLinks.jsx';
 
 export default function MainSection({ theme }) {
 
-    // Set search icon and history icon image according to theme.
-    const searchIcon = theme === 'light' ? searchDark : searchLight;
-    const historyIcon = theme === 'light' ? historyDark : historyLight;
+    const iconMap = {
+        'light': { search: searchDark, history: historyDark, home: houseDark },
+        'dark': { search: searchLight, history: historyLight, home: houseLight },
+    }
+    // // Set search icon and history icon image according to theme.
+    // const searchIcon = theme === 'light' ? searchDark : searchLight;
+    // const historyIcon = theme === 'light' ? historyDark : historyLight;
+    // const homeIcon = theme === 'light' ? houseDark : houseLight;
+
+    const searchIcon = iconMap[theme].search;
+    const historyIcon = iconMap[theme].history;
+    const homeIcon = iconMap[theme].home;
 
     // State for word to fetch api data for the word user searched for.
     const [word, setSearchWord] = useState(null);
@@ -57,7 +68,7 @@ export default function MainSection({ theme }) {
     }, [wordData]);
 
     return (
-        <WordDataContextProvider value={{searchIcon, historyIcon, word, outputSection, setSearchWord, setWordData, setOutputSection}}>
+        <WordDataContextProvider value={{ homeIcon, searchIcon, historyIcon, word, outputSection, setSearchWord, setWordData, setOutputSection}}>
             <main className={`main ${theme}`}>
                 <NavLinks />
                 <Outlet />
