@@ -3,10 +3,9 @@ import searchLight from '../images/search-light.svg';
 import historyDark from '../images/clock-rotate-left-dark.svg';
 import historyLight from '../images/clock-rotate-left-light.svg';
 import { useEffect, useState } from "react";
-import WordResult from "./WordResult";
-import WelcomeScreen from "./WelcomeScreen";
 import { WordDataContextProvider } from '../contexts/WordDataContext.jsx';
 import { Outlet } from 'react-router-dom';
+import WordResult from "./WordResult";
 import NavLinks from './NavLinks.jsx';
 
 export default function MainSection({ theme }) {
@@ -21,11 +20,8 @@ export default function MainSection({ theme }) {
     // State for the word  searched by user.
     const [wordData, setWordData] = useState(null);
 
-    // First screen when user visits the app.
-    const welcomeScreen = <WelcomeScreen setSearchWord={setSearchWord} />;
-
     // The outputSection state will when user searches for any word.
-    const [outputSection, setOutputSection] = useState(welcomeScreen);
+    const [outputSection, setOutputSection] = useState(null);
 
     /*
         This function handles the wordData.
