@@ -68,7 +68,7 @@ export default function MainSection({ theme }) {
     }, [wordData]);
 
     return (
-        <WordDataContextProvider value={{ homeIcon, searchIcon, historyIcon, word, outputSection, setSearchWord, setWordData, setOutputSection}}>
+        <WordDataContextProvider value={{ homeIcon, searchIcon, historyIcon, word, outputSection, setSearchWord, setWordData, setOutputSection }}>
             <main className={`main ${theme}`}>
                 <NavLinks />
                 <Outlet />
