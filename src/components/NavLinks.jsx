@@ -10,6 +10,7 @@ export default function NavLinks() {
     // State for hamburger button to track it's active or inActive stage.
     const [hamActiveState, setHamActiveState] = useState('inActive');
 
+    // This function hides the navlinks by setting the hamActiveState to inActive.
     const hideOptionBtnContainer = () => {
         setHamActiveState('inActive');
     };
