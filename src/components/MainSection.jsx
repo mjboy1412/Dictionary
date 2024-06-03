@@ -1,9 +1,19 @@
+import searchDark from '../images/search-dark.svg';
+import searchLight from '../images/search-light.svg';
+import historyDark from '../images/clock-rotate-left-dark.svg';
+import historyLight from '../images/clock-rotate-left-light.svg';
 import { useEffect, useState } from "react";
-import Input from "./Input";
 import WordResult from "./WordResult";
 import WelcomeScreen from "./WelcomeScreen";
+import { WordDataContextProvider } from '../contexts/WordDataContext.jsx';
+import { Outlet } from 'react-router-dom';
+import NavLinks from './NavLinks.jsx';
 
 export default function MainSection({ theme }) {
+
+    // Set search icon and history icon image according to theme.
+    const searchIcon = theme === 'light' ? searchDark : searchLight;
+    const historyIcon = theme === 'light' ? historyDark : historyLight;
 
     // State for word to fetch api data for the word user searched for.
     const [word, setSearchWord] = useState(null);
@@ -13,7 +23,7 @@ export default function MainSection({ theme }) {
 
     // First screen when user visits the app.
     const welcomeScreen = <WelcomeScreen setSearchWord={setSearchWord} />;
-    
+
     // The outputSection state will when user searches for any word.
     const [outputSection, setOutputSection] = useState(welcomeScreen);
 
@@ -51,10 +61,12 @@ export default function MainSection({ theme }) {
     }, [wordData]);
 
     return (
-        <main className={`main ${theme}`}>
-            <Input theme={theme} word={word} setSearchWord={setSearchWord} setWordData={setWordData} setOutputSection={setOutputSection} />
-            {outputSection}
-        </main>
+        <WordDataContextProvider value={{searchIcon, historyIcon, word, outputSection, setSearchWord, setWordData, setOutputSection}}>
+            <main className={`main ${theme}`}>
+                <NavLinks />
+                <Outlet />
+            </main>
+        </WordDataContextProvider>
     );
 }
 

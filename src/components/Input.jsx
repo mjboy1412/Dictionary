@@ -1,11 +1,9 @@
-import { useEffect, useRef } from 'react';
-import searchDark from '../images/search-dark.svg';
-import searchLight from '../images/search-light.svg';
+import { useContext, useEffect, useRef } from 'react';
+import { WordDataContext } from '../contexts/WordDataContext';
 
-export default function Input({theme, word, setSearchWord, setWordData, setOutputSection}) {
+export default function Input() {
 
-    // Set search icon image according to theme.
-    const searchIcon = theme === 'light' ? searchDark : searchLight;
+    const { searchIcon, word, setSearchWord, setWordData, setOutputSection } = useContext(WordDataContext)
 
     const loader = (
         <div className='loaderContainer flex'>
@@ -51,7 +49,7 @@ export default function Input({theme, word, setSearchWord, setWordData, setOutpu
 
     return (
         <div className='search'>
-            <label htmlFor="searchWord" className={`flex ${theme}`}>
+            <label htmlFor="searchWord" className='flex'>
                 <input type="text" name="word" id="searchWord" placeholder="Search for a word..." ref={inputRef} onKeyDown={(e) => {if (e.key === 'Enter') handleSearchBtnClick()}} />
                 <button className='searchWordBtn' onClick={handleSearchBtnClick}>
                     <img src={searchIcon} alt="Search" height={20} />

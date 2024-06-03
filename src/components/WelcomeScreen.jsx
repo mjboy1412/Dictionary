@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import { WordDataContext } from "../contexts/WordDataContext";
+import { NavLink } from "react-router-dom";
 
-export default function WelcomeScreen({setSearchWord}) {
+export default function WelcomeScreen() {
+
+    // Getting setSearchWord setter function from WordDataContext.
+    const {setSearchWord} = useContext(WordDataContext);
 
     // Array of objects for initial word cards.
     const wordCards = [
@@ -29,7 +35,9 @@ export default function WelcomeScreen({setSearchWord}) {
                     <div className='wordCard' key={index}>
                         <p className='title'>{card["title"]}</p>
                         <p className='welcomeWordDefinition'>{card["definition"]}</p>
-                        <button type='button' className='knowMoreBtn' onClick={() => {setSearchWord(card["title"])}}>Know More</button>
+                        <NavLink to={'search'} onClick={() => {setSearchWord(card["title"])}} className={`knowMoreLink`}>
+                            Know More
+                        </NavLink>
                     </div>
                 ))
             }
