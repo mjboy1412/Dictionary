@@ -33,7 +33,7 @@ function App() {
     <>
     <div id='body' className={`${theme} flex`}>
       <Header theme={theme} changeTheme={changeTheme} />
-      <MainSection theme={theme} />
+      <MainSection theme={theme} setUserData={setUserData} userData={userData} />
     </div>
     </>
   )

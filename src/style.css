@@ -339,6 +339,20 @@ body{
     width:fit-content;
 }
 
+.historySection{
+    margin:2rem 0.5rem;
+}
+
+.historyBlock{
+    justify-content:space-between;
+    padding:10px;
+}
+
+.historyBlock div{
+    gap:2rem;
+    font-size:1.3rem;
+}
+
 .error{
     margin-top:2rem;
 }
@@ -444,10 +458,12 @@ body{
         position:absolute;
         top:-10px;
         right:0;
+        z-index:-10;
         transition:all 0.2s ease-in-out;
     }
 
     .hamburger.active+div .optionBtnContainer{
+        z-index:10;
         top:0;
         opacity:1;
     }

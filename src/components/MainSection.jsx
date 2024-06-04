@@ -4,17 +4,19 @@ import historyDark from '../images/clock-rotate-left-dark.svg';
 import historyLight from '../images/clock-rotate-left-light.svg';
 import houseDark from '../images/house-dark.svg';
 import houseLight from '../images/house-light.svg';
+import xMarkDark from '../images/xmark-dark.svg';
+import xMarkLight from '../images/xmark-light.svg';
 import { useEffect, useState } from "react";
 import { WordDataContextProvider } from '../contexts/WordDataContext.jsx';
 import { Outlet } from 'react-router-dom';
 import WordResult from "./WordResult";
 import NavLinks from './NavLinks.jsx';
 
-export default function MainSection({ theme }) {
+export default function MainSection({ theme, userData, setUserData }) {
 
     const iconMap = {
-        'light': { search: searchDark, history: historyDark, home: houseDark },
-        'dark': { search: searchLight, history: historyLight, home: houseLight },
+        'light': { search: searchDark, history: historyDark, home: houseDark, xMark: xMarkDark },
+        'dark': { search: searchLight, history: historyLight, home: houseLight, xMark: xMarkLight },
     }
     // // Set search icon and history icon image according to theme.
     // const searchIcon = theme === 'light' ? searchDark : searchLight;
@@ -24,6 +26,7 @@ export default function MainSection({ theme }) {
     const searchIcon = iconMap[theme].search;
     const historyIcon = iconMap[theme].history;
     const homeIcon = iconMap[theme].home;
+    const xMarkIcon = iconMap[theme].xMark;
 
     // State for word to fetch api data for the word user searched for.
     const [word, setSearchWord] = useState(null);
@@ -56,6 +59,21 @@ export default function MainSection({ theme }) {
             const phonetics = data[0]['phonetics'];
             const meanings = data[0]['meanings'];
 
+            // Update user data in local storage.
+            setUserData(prevData => {
+
+                // New object with the word user has searched for.
+                const newObject = {
+                    id: Date.now(),
+                    word: word
+                };
+
+                // Updated array of word history data.
+                const updatedArray = [newObject, ...prevData[1]];
+
+                return [prevData[0], updatedArray]
+             })
+
             setOutputSection(<WordResult word={word} phonetics={phonetics} meanings={meanings} />);
         }
     };
@@ -68,7 +86,7 @@ export default function MainSection({ theme }) {
     }, [wordData]);
 
     return (
-        <WordDataContextProvider value={{ homeIcon, searchIcon, historyIcon, word, outputSection, setSearchWord, setWordData, setOutputSection }}>
+        <WordDataContextProvider value={{ homeIcon, searchIcon, historyIcon, xMarkIcon, word, outputSection, userData, setUserData, setSearchWord, setWordData, setOutputSection }}>
             <main className={`main ${theme}`}>
                 <NavLinks />
                 <Outlet />
