@@ -300,11 +300,11 @@ body{
     border-radius:0.7rem;
 }
 
-.main.dark .wordCard{
+.main.dark .wordCard, .main.dark .historyBlock{
     background-color:var(--Very-Dark-Blue);
 }
 
-.main.light .wordCard{
+.main.light .wordCard, .main.light .historyBlock{
     background-color:var(--Light-Grayish-Blue);
 }
 
@@ -348,6 +348,13 @@ body{
     width:fit-content;
 }
 
+.noHistoryMsg{
+    margin:4rem 5px;
+    text-align:center;
+    font-size:1.5rem;
+    line-height:1.8;
+}
+
 .historySection{
     margin:2rem 0.5rem;
 }
@@ -355,6 +362,11 @@ body{
 .historyBlock{
     justify-content:space-between;
     padding:10px;
+    border-bottom:1px solid #FFF;
+}
+
+.historyBlock:last-child{
+    border:none;
 }
 
 .historyBlock div{

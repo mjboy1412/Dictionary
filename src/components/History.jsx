@@ -27,7 +27,7 @@ export default function History() {
     // If there is no hisotry yet, then returns a simple message.
     if (userData[1].length <= 0) {
         return (
-            <p className='noHistoryMsg'>Your search history will appear here.</p>
+            <p className='noHistoryMsg'>Your search history will appear here. 😊</p>
         );
     };
 
