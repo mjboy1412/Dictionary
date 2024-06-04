@@ -11,6 +11,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<App />} >
       <Route path='/' element={<WelcomeScreen />} />
       <Route path='search' element={<Search />} />
+      <Route path='search/:word' element={<Search />} />
       <Route path='history' element={<History />} />
     </Route>
   )

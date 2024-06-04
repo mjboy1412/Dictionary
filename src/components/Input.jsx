@@ -1,10 +1,15 @@
 import { useContext, useEffect, useRef } from 'react';
 import { WordDataContext } from '../contexts/WordDataContext';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Input() {
 
     const { searchIcon, word, setSearchWord, setWordData, setOutputSection } = useContext(WordDataContext);
 
+    // Current URL string (query string).
+    const [searchWordParam, setSearchWordParam] = useSearchParams();
+
+    // Loader
     const loader = (
         <div className='loaderContainer flex'>
             <div className="circle"></div>
@@ -12,6 +17,11 @@ export default function Input() {
             <div className="circle"></div>
         </div>
     );
+
+    // When searchWordParam change, then update the word state to the actual word in the searchWordParam ('word' query).
+    useEffect(() => {
+        setSearchWord(searchWordParam.get('word'));
+    }, [searchWordParam]);
 
     // This useEffect will create a side effect when the word state is changed, means when user search for a word.
     useEffect(() => {
@@ -32,19 +42,21 @@ export default function Input() {
                 );
                 setOutputSection(fetchError);
             });
-        }
+        } else {
+            setOutputSection('');
+        };
     }, [word]);
 
     // Reference for input element.
     const inputRef = useRef();
 
     /*
-        This function updates the word state.
+        This function updates the searchWordParam (search query or URL of the page).
     */
     const handleSearchBtnClick = () => {
         // Getting the input element value.
         const wordToSearch = inputRef.current.value.toString();
-        setSearchWord(wordToSearch);
+        setSearchWordParam({'word': wordToSearch});
     }
 
     return (
