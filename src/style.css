@@ -344,7 +344,6 @@ body{
 }
 
 .knowMoreLink{
-    text-decoration:none;
     width:fit-content;
 }
 
@@ -374,13 +373,13 @@ body{
     font-size:1.3rem;
 }
 
-.historyWord{
+.historyWord,.knowMoreLink{
     text-underline-offset:4px;
     text-decoration-color:rgb(16, 108, 228);
     transition:all 0.2s ease-in-out;
 }
 
-.historyWord:hover{
+.historyWord:hover,.knowMoreLink:hover{
     text-decoration-color:rgb(187, 64, 64);
 }
 
