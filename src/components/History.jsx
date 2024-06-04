@@ -33,10 +33,22 @@ export default function History() {
 
     return (
         <div className='historySection'>
+
+            <button
+                type='button'
+                className='clearAllBtn'
+                onClick={
+                    () => {
+                        setUserData(prevData => [prevData[0], []])
+                    }}
+            >
+                Clear All
+            </button>
+
             {
                 userData[1].map((data, index) => (
                     <div className='historyBlock flex' key={index}>
-                        
+
                         <div className='flex'>
                             <p className='date'>{
                                 formatDate(data['id'])

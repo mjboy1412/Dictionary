@@ -319,15 +319,24 @@ body{
     letter-spacing:0.8px;
 }
 
-.wordCard .knowMoreLink{
+.wordCard .knowMoreLink,.clearAllBtn{
     display:block;
     background-color:#000;
     color:#FFF;
-    padding:0.5rem;
+    padding:0.6rem;
     margin-left:auto;
     border-radius:0.3rem;
     font-size:1rem;
     transition:all 0.2s ease-in-out;
+}
+
+.clearAllBtn{
+    padding:0.6rem 0.8rem;
+    margin:1rem;
+}
+
+.clearAllBtn:hover{
+    transform:translateX(-3px);
 }
 
 .wordCard .knowMoreLink:hover{
