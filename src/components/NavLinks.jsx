@@ -5,7 +5,7 @@ import { WordDataContext } from '../contexts/WordDataContext';
 export default function NavLinks() {
 
     // Getting historyIcon and searchIcon from WordDataContext.
-    const { homeIcon, searchIcon, historyIcon } = useContext(WordDataContext);
+    const { homeIcon, searchIcon, historyIcon, homeLinkActive } = useContext(WordDataContext);
 
     // State for hamburger button to track it's active or inActive stage.
     const [hamActiveState, setHamActiveState] = useState('inActive');
@@ -62,9 +62,9 @@ export default function NavLinks() {
                 <div className='optionBtnContainer flex'>
 
                     <li className='home'>
-                        <NavLink to={'/'}
-                            className={({ isActive }) => `
-                                navLink flex ${isActive ? 'active' : 'inactive'}
+                        <NavLink to={'/Dictionary/'}
+                            className={() => `
+                                navLink flex ${homeLinkActive ? 'active' : 'inactive'}
                             `}
                             onClick={hideOptionBtnContainer}
                         >
@@ -74,7 +74,7 @@ export default function NavLinks() {
                     </li>
 
                     <li className='search'>
-                        <NavLink to={'search'}
+                        <NavLink to={'/Dictionary/search'}
                             className={({ isActive }) => `
                                 navLink flex ${isActive ? 'active' : 'inactive'}
                             `}
@@ -86,7 +86,7 @@ export default function NavLinks() {
                     </li>
 
                     <li className='history'>
-                        <NavLink to={'history'}
+                        <NavLink to={'/Dictionary/history'}
                             className={({ isActive }) => `
                                 navLink flex ${isActive ? 'active' : 'inactive'}
                             `}

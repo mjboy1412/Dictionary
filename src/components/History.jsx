@@ -1,10 +1,15 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { WordDataContext } from '../contexts/WordDataContext';
 import { Link } from 'react-router-dom';
 
 export default function History() {
 
-    const { userData, xMarkIcon, setUserData } = useContext(WordDataContext);
+    const { userData, xMarkIcon, setUserData, setHomeLinkActive } = useContext(WordDataContext);
+
+    // Setting home link active state to false.
+    useEffect(() => {
+        setHomeLinkActive(false);
+    });
 
     // This function removes the word data from localstorage whose id matches with the gived id.
     const removeDataItem = (id) => {
@@ -55,7 +60,7 @@ export default function History() {
                                 formatDate(data['id'])
                             }</p>
 
-                            <Link to={`/search?word=${data['word']}`} className='historyWord'>{
+                            <Link to={`/Dictionary/search?word=${data['word']}`} className='historyWord'>{
                                 data['word'].charAt(0).toUpperCase() + data['word'].slice(1)
                             }</Link>
                         </div>

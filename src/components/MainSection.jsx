@@ -26,6 +26,12 @@ export default function MainSection({ theme, userData, setUserData }) {
     const homeIcon = iconMap[theme].home;
     const xMarkIcon = iconMap[theme].xMark;
 
+    /*
+        State for checking whether the user is on Home page or not.
+        Due to custom paths in router for GitHub pages deployment, the Home state is always active.
+    */
+    const [homeLinkActive, setHomeLinkActive] = useState(true);
+
     // State for word to fetch api data for the word user searched for.
     const [word, setSearchWord] = useState(null);
 
@@ -89,7 +95,7 @@ export default function MainSection({ theme, userData, setUserData }) {
     }, [wordData]);
 
     return (
-        <WordDataContextProvider value={{ homeIcon, searchIcon, historyIcon, xMarkIcon, word, outputSection, userData, setUserData, setSearchWord, setWordData, setOutputSection }}>
+        <WordDataContextProvider value={{homeLinkActive, setHomeLinkActive, homeIcon, searchIcon, historyIcon, xMarkIcon, word, outputSection, userData, setUserData, setSearchWord, setWordData, setOutputSection }}>
             <main className={`main ${theme}`}>
                 <NavLinks />
                 <Outlet />
