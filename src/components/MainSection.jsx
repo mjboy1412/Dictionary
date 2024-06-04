@@ -71,6 +71,11 @@ export default function MainSection({ theme, userData, setUserData }) {
                 // Updated array of word history data.
                 const updatedArray = [newObject, ...prevData[1]];
 
+                // If history is greater than 100, then remove the last data object from updatedArray.
+                if (updatedArray.length > 100) {
+                    updatedArray.pop();
+                }
+
                 return [prevData[0], updatedArray]
              })
 
