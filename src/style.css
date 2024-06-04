@@ -93,11 +93,11 @@ button{
     list-style-type:none;
 }
 
-.main.dark .navLink{
+.main.dark .navLink,.main.dark .historyWord{
     color:#FFF;
 }
 
-.main.light .navLink{
+.main.light .navLink,.main.light .historyWord{
     color:#000;
 }
 
@@ -374,6 +374,16 @@ body{
     font-size:1.3rem;
 }
 
+.historyWord{
+    text-underline-offset:4px;
+    text-decoration-color:rgb(16, 108, 228);
+    transition:all 0.2s ease-in-out;
+}
+
+.historyWord:hover{
+    text-decoration-color:rgb(187, 64, 64);
+}
+
 .error{
     margin-top:2rem;
 }
@@ -487,5 +497,18 @@ body{
         z-index:10;
         top:0;
         opacity:1;
+    }
+}
+
+@media only screen and (max-width:350px){
+    .historyBlock div{
+        font-size:1rem;
+        gap:1rem;
+        text-align:left;
+        flex-wrap:wrap;
+    }
+
+    .historyBlock{
+        flex-wrap:wrap;
     }
 }

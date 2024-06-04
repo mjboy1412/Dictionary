@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { WordDataContext } from '../contexts/WordDataContext';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function WelcomeScreen() {
 
@@ -35,9 +35,9 @@ export default function WelcomeScreen() {
                     <div className='wordCard' key={index}>
                         <p className='title'>{card["title"]}</p>
                         <p className='welcomeWordDefinition'>{card["definition"]}</p>
-                        <NavLink to={'search'} onClick={() => {setSearchWord(card["title"])}} className={`knowMoreLink`}>
+                        <Link to={`search?word=${card['title']}`} className={`knowMoreLink`}>
                             Know More
-                        </NavLink>
+                        </Link>
                     </div>
                 ))
             }

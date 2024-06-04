@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { WordDataContext } from '../contexts/WordDataContext';
+import { Link } from 'react-router-dom';
 
 export default function History() {
 
@@ -54,9 +55,9 @@ export default function History() {
                                 formatDate(data['id'])
                             }</p>
 
-                            <p className='historyWord'>{
+                            <Link to={`/search?word=${data['word']}`} className='historyWord'>{
                                 data['word'].charAt(0).toUpperCase() + data['word'].slice(1)
-                            }</p>
+                            }</Link>
                         </div>
 
                         <button type='button' onClick={() => removeDataItem(data['id'])}>
