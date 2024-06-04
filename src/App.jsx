@@ -14,15 +14,10 @@ function App() {
   // Theme state.
   const [theme, setTheme] = useState(userData[0]);
 
-  // Updates the localStorage when the userData updates.
+  // Updates the localStorage when the theme or userData updates.
   useEffect(() => {
-    localStorage.setItem('userData', JSON.stringify(userData));
-  }, [userData]);
-
-  // Updates theme in userData when it is changed.
-  useEffect(() => {
-    setUserData([theme, ...userData.slice(1)]);
-  }, [theme]);
+    localStorage.setItem('userData', JSON.stringify([theme, ...userData.slice(1)]));
+  }, [userData, theme]);
 
   // This function toggle the theme state between light and dark.
   const changeTheme = () => {

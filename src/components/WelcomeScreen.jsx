@@ -35,8 +35,8 @@ export default function WelcomeScreen() {
         <>
         <div className='welcome'>
             {
-                wordCards.map((card, index) => (
-                    <div className='wordCard' key={index}>
+                wordCards.map(card => (
+                    <div className='wordCard' key={card["title"]}>
                         <p className='title'>{card["title"]}</p>
                         <p className='welcomeWordDefinition'>{card["definition"]}</p>
                         <Link to={`/Dictionary/search?word=${card['title']}`} className={`knowMoreLink`}>
