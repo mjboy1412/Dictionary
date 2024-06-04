@@ -3,7 +3,7 @@ import { WordDataContext } from '../contexts/WordDataContext';
 
 export default function Input() {
 
-    const { searchIcon, word, setSearchWord, setWordData, setOutputSection } = useContext(WordDataContext)
+    const { searchIcon, word, setSearchWord, setWordData, setOutputSection } = useContext(WordDataContext);
 
     const loader = (
         <div className='loaderContainer flex'>
@@ -57,4 +57,4 @@ export default function Input() {
             </label>
         </div>
     );
-}
+};

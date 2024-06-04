@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { WordDataContext } from "../contexts/WordDataContext";
-import Input from "./Input";
+import { useContext } from 'react';
+import { WordDataContext } from '../contexts/WordDataContext';
+import Input from './Input';
 
 export default function Search() {
 
@@ -12,5 +12,5 @@ export default function Search() {
         <Input />
         {outputSection}
         </>
-    )
-}
+    );
+};

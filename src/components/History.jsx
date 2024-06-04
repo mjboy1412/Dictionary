@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { WordDataContext } from "../contexts/WordDataContext"
+import { useContext } from 'react';
+import { WordDataContext } from '../contexts/WordDataContext';
 
 export default function History() {
 
@@ -9,7 +9,7 @@ export default function History() {
     const removeDataItem = (id) => {
         const updatedWordHistory = userData[1].filter((data) => data.id !== id);
         setUserData(prevData => [prevData[0], updatedWordHistory]);
-    }
+    };
 
     // This function returns the date in the format dd-mm-yyyy from the passed milliseconds.
     const formatDate = (milliseconds) => {
@@ -22,7 +22,7 @@ export default function History() {
         const year = date.getFullYear().toString();
 
         return `${day}-${month}-${year}`;
-    }
+    };
 
     // If there is no hisotry yet, then returns a simple message.
     if (userData[1].length <= 0) {
@@ -67,5 +67,5 @@ export default function History() {
                 ))
             }
         </div>
-    )
-}
+    );
+};

@@ -9,7 +9,7 @@ function App() {
   const initialUserData = JSON.parse(localStorage.getItem('userData')) || ['dark', []];
 
   // Initializing a state which will help to update the local storage for userData.
-  let [userData, setUserData] = useState(initialUserData);
+  const [userData, setUserData] = useState(initialUserData);
 
   // Theme state.
   const [theme, setTheme] = useState(userData[0]);
@@ -27,7 +27,7 @@ function App() {
   // This function toggle the theme state between light and dark.
   const changeTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
-  }
+  };
 
   return (
     <>
@@ -36,7 +36,7 @@ function App() {
       <MainSection theme={theme} setUserData={setUserData} userData={userData} />
     </div>
     </>
-  )
-}
+  );
+};
 
 export default App;

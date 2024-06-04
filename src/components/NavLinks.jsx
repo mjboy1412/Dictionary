@@ -1,6 +1,6 @@
-import { useContext, useEffect, useRef, useState } from "react"
-import { NavLink } from "react-router-dom"
-import { WordDataContext } from "../contexts/WordDataContext"
+import { useContext, useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { WordDataContext } from '../contexts/WordDataContext';
 
 export default function NavLinks() {
 
@@ -24,11 +24,11 @@ export default function NavLinks() {
             // If the click is on the menu, then don't hide it, else hides it.
             if (!menuRef.current.contains(e.target)){
                 hideOptionBtnContainer();
-            }
-        }
+            };
+        };
 
         // Array of events for desktop and mobile.
-        const events = ['mousedown', 'touchstart']
+        const events = ['mousedown', 'touchstart'];
 
         // Adding event listener to handle click on document.
         events.forEach((event) => document.addEventListener(event, handleClick));
@@ -101,5 +101,5 @@ export default function NavLinks() {
             </div>
         </div>
         </>
-    )
-}
+    );
+};

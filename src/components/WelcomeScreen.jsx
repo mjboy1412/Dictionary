@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { WordDataContext } from "../contexts/WordDataContext";
-import { NavLink } from "react-router-dom";
+import { useContext } from 'react';
+import { WordDataContext } from '../contexts/WordDataContext';
+import { NavLink } from 'react-router-dom';
 
 export default function WelcomeScreen() {
 
@@ -43,5 +43,5 @@ export default function WelcomeScreen() {
             }
         </div>
         </>
-    )
-}
+    );
+};

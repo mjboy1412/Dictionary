@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { WordDataContextProvider } from '../contexts/WordDataContext.jsx';
+import { Outlet } from 'react-router-dom';
 import searchDark from '../images/search-dark.svg';
 import searchLight from '../images/search-light.svg';
 import historyDark from '../images/clock-rotate-left-dark.svg';
@@ -6,23 +9,18 @@ import houseDark from '../images/house-dark.svg';
 import houseLight from '../images/house-light.svg';
 import xMarkDark from '../images/xmark-dark.svg';
 import xMarkLight from '../images/xmark-light.svg';
-import { useEffect, useState } from "react";
-import { WordDataContextProvider } from '../contexts/WordDataContext.jsx';
-import { Outlet } from 'react-router-dom';
 import WordResult from "./WordResult";
 import NavLinks from './NavLinks.jsx';
 
 export default function MainSection({ theme, userData, setUserData }) {
 
+    // Object of objects for icons of light and dark themes respectively.
     const iconMap = {
         'light': { search: searchDark, history: historyDark, home: houseDark, xMark: xMarkDark },
         'dark': { search: searchLight, history: historyLight, home: houseLight, xMark: xMarkLight },
-    }
-    // // Set search icon and history icon image according to theme.
-    // const searchIcon = theme === 'light' ? searchDark : searchLight;
-    // const historyIcon = theme === 'light' ? historyDark : historyLight;
-    // const homeIcon = theme === 'light' ? houseDark : houseLight;
+    };
 
+    // Getting icons based on current theme.
     const searchIcon = iconMap[theme].search;
     const historyIcon = iconMap[theme].history;
     const homeIcon = iconMap[theme].home;
@@ -80,7 +78,7 @@ export default function MainSection({ theme, userData, setUserData }) {
              })
 
             setOutputSection(<WordResult word={word} phonetics={phonetics} meanings={meanings} />);
-        }
+        };
     };
 
     // Update the result view when user search for a word each time.
@@ -98,6 +96,6 @@ export default function MainSection({ theme, userData, setUserData }) {
             </main>
         </WordDataContextProvider>
     );
-}
+};
 
 // https://www.google.com/search?q=chat

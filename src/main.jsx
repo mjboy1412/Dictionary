@@ -14,10 +14,10 @@ const router = createBrowserRouter(
       <Route path='history' element={<History />} />
     </Route>
   )
-)
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
     <RouterProvider router={router} />
   // </React.StrictMode>,
-)
+);

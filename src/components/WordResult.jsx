@@ -65,5 +65,5 @@ export default function WordResult({word, phonetics, meanings}) {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
