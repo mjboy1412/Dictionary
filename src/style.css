@@ -406,9 +406,7 @@ body{
 
 .loaderContainer{
     gap:0px;
-    margin:2rem;
-    background-color:transparent;
-    width:fit-content;
+    margin:4rem;
 }
 
 .circle{
