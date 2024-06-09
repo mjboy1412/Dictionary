@@ -20,6 +20,15 @@ This Dictionary App is a React-based web application designed to help users look
 5. Click on cross icon to remove the word from history.
 6. Click on Clear All button to clear complete history.
 
+## Screenshots
+
+<p align='center'>
+  <img src='src/images/s1-Home-dark.png' alt='Home in dark theme' width='500' />
+  <img src='src/images/s2-Home-light.png' alt='Home in light theme' width='500'' />
+</p>
+
+![Search screenshot](src/images/s3-Search.png)
+
 ## Components
 
 ### App.jsx
