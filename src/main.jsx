@@ -8,11 +8,11 @@ import Search from './components/Search.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/Dictionary/' element={<App />} >
-      <Route path='/Dictionary/' element={<WelcomeScreen />} />
-      <Route path='/Dictionary/search' element={<Search />} />
-      <Route path='/Dictionary/search/:word' element={<Search />} />
-      <Route path='/Dictionary/history' element={<History />} />
+    <Route path='/' element={<App />} >
+      <Route path='/' element={<WelcomeScreen />} />
+      <Route path='/search' element={<Search />} />
+      <Route path='/search/:word' element={<Search />} />
+      <Route path='/history' element={<History />} />
     </Route>
   )
 );

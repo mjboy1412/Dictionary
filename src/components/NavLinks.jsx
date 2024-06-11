@@ -62,7 +62,7 @@ export default function NavLinks() {
                 <div className='optionBtnContainer flex'>
 
                     <li className='home'>
-                        <NavLink to={'/Dictionary/'}
+                        <NavLink to={'/'}
                             className={() => `
                                 navLink flex ${homeLinkActive ? 'active' : 'inactive'}
                             `}
@@ -74,7 +74,7 @@ export default function NavLinks() {
                     </li>
 
                     <li className='search'>
-                        <NavLink to={'/Dictionary/search'}
+                        <NavLink to={'/search'}
                             className={({ isActive }) => `
                                 navLink flex ${isActive ? 'active' : 'inactive'}
                             `}
@@ -86,7 +86,7 @@ export default function NavLinks() {
                     </li>
 
                     <li className='history'>
-                        <NavLink to={'/Dictionary/history'}
+                        <NavLink to={'/history'}
                             className={({ isActive }) => `
                                 navLink flex ${isActive ? 'active' : 'inactive'}
                             `}
